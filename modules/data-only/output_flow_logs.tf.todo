@@ -1,0 +1,19 @@
+output "vpc_flow_log_cloudwatch_iam_role_arn" {
+    description = "The ARN of the IAM role used when pushing logs to Cloudwatch log group"
+    value = "NOT IMPLEMENTED"
+}
+
+output "vpc_flow_log_destination_arn" {
+    description = "The ARN of the destination for VPC Flow Logs"
+    value = "NOT IMPLEMENTED"
+}
+
+output "vpc_flow_log_destination_type" {
+    description = "The type of the destination for VPC Flow Logs"
+    value = "NOT IMPLEMENTED"
+}
+
+output "vpc_flow_log_id" {
+    description = "The ID of the Flow Log resource"
+    value = "NOT IMPLEMENTED"
+}

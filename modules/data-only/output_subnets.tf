@@ -1,147 +1,160 @@
-# output "subnet_ids" {
+# # all
+# output "all_subnet_ids" {
 #   value = local.subnet_ids
 # }
 
-# output "subnet" {
+# output "all_subnet_data" {
 #   value = local.subnets
 # }
 
-output "private_subnets" {
-    description = "TODO"
-    value       = local.private_subnets
-}
+# output "all_subnet_group_data" {
+#   value = local.subnet_groups
+# }
 
-output "public_subnets" {
-    description = "TODO"
-    value       = local.public_subnets
-}
+# output "all_subnet_groups_data" {
+#   value = local.subnet_groups
+# }
 
-output "outpost_subnets" {
-    description = "TODO"
-    value       = local.outpost_subnets
-}
+# # ids
+# output "private_subnets" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "private", []) : s.id]
+# }
 
-output "database_subnets" {
-    description = "TODO"
-    value       = local.database_subnets
-}
+# output "public_subnets" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "public", []) : s.id]
+# }
 
-output "elasticache_subnets" {
-    description = "TODO"
-    value       = local.elasticache_subnets
-}
+# output "outpost_subnets" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "outpost", []) : s.id]
+# }
 
-output "redshift_subnets" {
-    description = "TODO"
-    value       = local.redshift_subnets
-}
+# output "database_subnets" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "database", []) : s.id]
+# }
 
-output "intra_subnets" {
-    description = "TODO"
-    value       = local.intra_subnets
-}
+# output "elasticache_subnets" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "elasticache", []) : s.id]
+# }
 
-output "private_subnet_arns" {
-    description = "TODO"
-    value       = local.private_subnet_arns
-}
+# output "redshift_subnets" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "redshift", []) : s.id]
+# }
 
-output "public_subnet_arns" {
-    description = "TODO"
-    value       = local.public_subnet_arns
-}
+# output "intra_subnets" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "intra", []) : s.id]
+# }
 
-output "outpost_subnet_arns" {
-    description = "TODO"
-    value       = local.outpost_subnet_arns
-}
+# output "private_subnet_arns" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "private", []) : s.arn]
+# }
 
-output "database_subnet_arns" {
-    description = "TODO"
-    value       = local.database_subnet_arns
-}
+# # arns
+# output "public_subnet_arns" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "public", []) : s.arn]
+# }
 
-output "elasticache_subnet_arns" {
-    description = "TODO"
-    value       = local.elasticache_subnet_arns
-}
+# output "outpost_subnet_arns" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "outpost", []) : s.arn]
+# }
 
-output "redshift_subnet_arns" {
-    description = "TODO"
-    value       = local.redshift_subnet_arns
-}
+# output "database_subnet_arns" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "database", []) : s.arn]
+# }
 
-output "intra_subnet_arns" {
-    description = "TODO"
-    value       = local.intra_subnet_arns
-}
+# output "elasticache_subnet_arns" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "elasticache", []) : s.arn]
+# }
 
-output "private_subnet_cidr_blocks" {
-    description = "TODO"
-    value       = local.private_subnet_cidr_blocks
-}
+# output "redshift_subnet_arns" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "redshift", []) : s.arn]
+# }
 
-output "public_subnet_cidr_blocks" {
-    description = "TODO"
-    value       = local.public_subnet_cidr_blocks
-}
+# output "intra_subnet_arns" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "intra", []) : s.arn]
+# }
 
-output "outpost_subnet_cidr_blocks" {
-    description = "TODO"
-    value       = local.outpost_subnet_cidr_blocks
-}
+# # cidr blocks
+# output "private_subnet_cidr_blocks" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "private", []) : s.cidr_block]
+# }
 
-output "database_subnet_cidr_blocks" {
-    description = "TODO"
-    value       = local.database_subnet_cidr_blocks
-}
+# output "public_subnet_cidr_blocks" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "public", []) : s.cidr_block]
+# }
 
-output "elasticache_subnet_cidr_blocks" {
-    description = "TODO"
-    value       = local.elasticache_subnet_cidr_blocks
-}
+# output "outpost_subnet_cidr_blocks" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "outpost", []) : s.cidr_block]
+# }
 
-output "redshift_subnet_cidr_blocks" {
-    description = "TODO"
-    value       = local.redshift_subnet_cidr_blocks
-}
+# output "database_subnet_cidr_blocks" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "database", []) : s.cidr_block]
+# }
 
-output "intra_subnet_cidr_blocks" {
-    description = "TODO"
-    value       = local.intra_subnet_cidr_blocks
-}
+# output "elasticache_subnet_cidr_blocks" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "elasticache", []) : s.cidr_block]
+# }
 
-output "private_subnet_ipv6_cidr_blocks" {
-    description = "TODO"
-    value       = local.private_subnet_ipv6_cidr_blocks
-}
+# output "redshift_subnet_cidr_blocks" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "redshift", []) : s.cidr_block]
+# }
 
-output "public_subnet_ipv6_cidr_blocks" {
-    description = "TODO"
-    value       = local.public_subnet_ipv6_cidr_blocks
-}
+# output "intra_subnet_cidr_blocks" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "intra", []) : s.cidr_block]
+# }
 
-output "outpost_subnet_ipv6_cidr_blocks" {
-    description = "TODO"
-    value       = local.outpost_subnet_ipv6_cidr_blocks
-}
+# # ipv6 cidr blocks
+# output "private_subnet_ipv6_cidr_blocks" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "private", []) : s.ipv6_cidr_block if s.ipv6_cidr_block != null]
+# }
 
-output "database_subnet_ipv6_cidr_blocks" {
-    description = "TODO"
-    value       = local.database_subnet_ipv6_cidr_blocks
-}
+# output "public_subnet_ipv6_cidr_blocks" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "public", []) : s.ipv6_cidr_block if s.ipv6_cidr_block != null]
+# }
 
-output "elasticache_subnet_ipv6_cidr_blocks" {
-    description = "TODO"
-    value       = local.elasticache_subnet_ipv6_cidr_blocks
-}
+# output "outpost_subnet_ipv6_cidr_blocks" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "outpost", []) : s.ipv6_cidr_block if s.ipv6_cidr_block != null]
+# }
 
-output "redshift_subnet_ipv6_cidr_blocks" {
-    description = "TODO"
-    value       = local.redshift_subnet_ipv6_cidr_blocks
-}
+# output "database_subnet_ipv6_cidr_blocks" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "database", []) : s.ipv6_cidr_block if s.ipv6_cidr_block != null]
+# }
 
-output "intra_subnet_ipv6_cidr_blocks" {
-    description = "TODO"
-    value       = local.intra_subnet_ipv6_cidr_blocks
-}
+# output "elasticache_subnet_ipv6_cidr_blocks" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "elasticache", []) : s.ipv6_cidr_block if s.ipv6_cidr_block != null]
+# }
+
+# output "redshift_subnet_ipv6_cidr_blocks" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "redshift", []) : s.ipv6_cidr_block if s.ipv6_cidr_block != null]
+# }
+
+# output "intra_subnet_ipv6_cidr_blocks" {
+#   description = "TODO"
+#   value       = [for s in lookup(local.subnet_groups, "intra", []) : s.ipv6_cidr_block if s.ipv6_cidr_block != null]
+# }

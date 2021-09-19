@@ -1,0 +1,47 @@
+# igw
+output "igw_arn" {
+    value = length(data.aws_arn.igw.*.resource) > 0 ? data.aws_internet_gateway.igw.0.arn : null
+}
+
+output "igw_id" {
+    value = length(data.aws_arn.igw.*.resource) > 0 ? split("/", data.aws_arn.igw.0.resource)[1] : null
+}
+
+# natgw
+# output "all_nat_data" {
+#     value = data.aws_nat_gateway.nat
+# }
+
+output "nat_ids" {
+    value = [ for n in data.aws_nat_gateway.nat : n.allocation_id ]
+}
+
+output "nat_public_ips" {
+    value = [ for n in data.aws_nat_gateway.nat : n.public_ip ]
+}
+
+output "natgw_ids" {
+    value = [ for n in data.aws_nat_gateway.nat : n.id ]
+}
+
+# vgw
+# output "all_vgw_data" {
+#     value = data.aws_vpn_gateway.vgw
+# }
+
+output "vgw_arn" {
+    value = [ for v in data.aws_vpn_gateway.vgw : v.id ] # TODO build arn
+}
+
+output "vgw_id" {
+    value = [ for v in data.aws_vpn_gateway.vgw : v.id ]
+}
+
+# vgw
+# output "all_cgw_data" {
+#     value = data.aws_customer_gateway.cgw
+# }
+
+# cgw
+# cgw_arns
+# cgw_ids

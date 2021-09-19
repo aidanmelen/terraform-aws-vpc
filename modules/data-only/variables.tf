@@ -1,7 +1,6 @@
 variable "vpc_id" {
   description = "The ID of the VPC."
   type        = string
-  default     = "vpc-080e9d66f63b9459f" # null
 }
 
 variable "retrieve_subnets" {
@@ -10,9 +9,39 @@ variable "retrieve_subnets" {
   default     = true
 }
 
+variable "retrieve_route_tables" {
+  description = "Whether to retrieve route_tables data."
+  type        = bool
+  default     = true
+}
+
+variable "retrieve_igw" {
+  description = "Whether to retrieve internet gateway data."
+  type        = bool
+  default     = true
+}
+
+variable "retrieve_natgw" {
+  description = "Whether to retrieve nat gateway data."
+  type        = bool
+  default     = false
+}
+
+variable "retrieve_vgw" {
+  description = "Whether to retrieve vpn gateway data."
+  type        = bool
+  default     = false
+}
+
+variable "retrieve_cgw" {
+  description = "Whether to retrieve customer gateway data."
+  type        = bool
+  default     = false
+}
+
 variable "subnet_groups_patterns" {
   description = "A map of subnet group names to regex patterns."
-  type = any
+  type        = any
   default = {
     private     = "^.*private.*"
     public      = "^.*public.*"
@@ -20,18 +49,5 @@ variable "subnet_groups_patterns" {
     elasticache = "^.*elasticache.*"
     redshift    = "^.*redshift.*"
     intra       = "^.*intra.*"
-  }
-}
-
-variable "route_table_groups_patterns" {
-  description = "A map of route table group names to regex patterns."
-  type = any
-  default = {
-    private     = "*private*"
-    public      = "*public*"
-    database    = "*db*"
-    elasticache = "*elasticache*"
-    redshift    = "*redshift*"
-    intra       = "*intra*"
   }
 }

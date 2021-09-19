@@ -26,8 +26,8 @@ module "vpc" {
 
   enable_ipv6 = true
 
-  enable_nat_gateway = false
-  single_nat_gateway = false
+  enable_nat_gateway = true
+  single_nat_gateway = true
 
   tags = {
     Owner       = "user"
@@ -44,8 +44,8 @@ module "vpc" {
 # Data-only Module
 ################################################################################
 
-module "vpc_data_only" {
-  source = "../../modules/data-only"
+# module "vpc_data_only" {
+#   source = "../../modules/data-only"
 
-  vpc_id = module.vpc.vpc_id
-}
+#   vpc_id = module.vpc.vpc_id
+# }
